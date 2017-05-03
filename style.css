@@ -1,0 +1,92 @@
+*
+{
+    box-sizing: border-box;
+}
+body {
+	/* structure */
+    margin: 0 auto;
+    min-height: 100%;
+    width: 80%;
+
+    /* presentation */
+    background-color: #ECF0F1;
+    font-family: 'Open Sans', sans-serif;
+}
+canvas {
+    background-color: white;
+    box-shadow: 0 0 8px 1px #2C3E50;
+}
+canvas + canvas {
+    margin-left: 2em;
+}
+h1 {
+    color: #E74C3C;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 4px #E79C94;
+}
+hr {
+    border-color: #ABA2A2;
+}
+/********************** CLASSES GENERALES **********************/
+
+#color {
+    display: none;
+}
+
+/********************** PALETTE DE COULEURS **********************/
+
+.color-palette {
+    cursor: crosshair;
+}
+#color {
+	margin-left: 20px;
+	cursor: crosshair;
+}
+.nav ul li {
+	list-style: none;
+	padding: 10px;
+}
+.nav ul li button {
+	margin-left: 10px;
+}
+.nav span {
+	font-size: 24px;
+}
+.color {
+	display: inline;
+}
+.black, .maroon, .red, .yellow, .green, .seagreen, .blue {
+	width: 30px;
+	height: 30px;
+	border: 1px;
+	border-radius: 50%;
+	display: inline-block;
+	 position: relative;
+	 top: 0.5em;
+}
+.black {
+	background: black;
+}
+.maroon {
+	background: #5C2121;
+}
+.red {
+	background: #B9121B;
+}
+.yellow {
+	background: #FFBD07;
+}
+.green {
+	background: #13B813;
+}
+.seagreen{
+	background: #029E9A;
+}
+.blue {
+	background: #0378A6;
+}
+/********************** ARDOISE **********************/
+
+.slate {
+    cursor: default;
+}
