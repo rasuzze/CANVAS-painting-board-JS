@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<h1><i class="fa fa-paint-brush" aria-hidden="true"></i> Magic Drawing Board ;-)</h1>
+ <canvas id="slate" class="slate" width="640" height="480"></canvas>
+ <canvas id="color" class="color-palette " width="256" height="256"></canvas>
+ <hr>
+ <nav class="nav">
+   <ul>
+     <li>
+       <span>Tools:</span>
+       <button><i class="fa fa-eraser" id="tool-clear-canvas" aria-hidden="true"></i></button>
+       <button><i class="fa fa-eyedropper" aria-hidden="true" id="tool-color-picker"></i></button>
+       <button><i id="save-image" class="fa fa-floppy-o" download></i></button>
+       <button><i id='back' class="fa fa-step-backward" aria-hidden="true"></i></button>
+       
+       
+     </li>
+     <li class="colors">
+          <span>Colors:</span>
+          <div class="color">
+            <div class="pen-color black" data-color="black"></div>
+            <div class=" pen-color maroon" data-color="#5C2121"></div>
+            <div class=" pen-color red" data-color="#B9121B"></div>
+            <div class=" pen-color yellow" data-color="#FFBD07"></div>
+            <div class=" pen-color green" data-color="#13B813"></div>
+            <div class=" pen-color seagreen" data-color="#029E9A"></div>
+            <div class=" pen-color blue" data-color="#0378A6"></div>
+          </div>
+     </li>
+     <li>
+     <span >Thickness:</span>
+     <button class="pen-size" data-size="1">Thin</button>
+     <button class="pen-size" data-size="3">Normal</button>
+     <button class="pen-size" data-size="5">Thick</button>
+     </li>
+   </ul>
+ </nav>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/classes/Program.class.js"></script>
+<script type="text/javascript" src="js/classes/Slate.class.js"></script>
+<script type="text/javascript" src="js/classes/Pen.class.js"></script>
+<script type="text/javascript" src="js/classes/ColorPalette.class.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

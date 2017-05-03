@@ -1,0 +1,74 @@
+
+1. Apsirašysime savo HTML kodą
+	1.1 apsirašysime <head> žymą
+	1.2 Normalize ir font-awesome, taip pat pagrindinis stiliaus failas
+	1.2 Open Sans šriftą
+	1.3 Įsidėsime jQuery biblioteką
+	1.4	Susikursime direktoriją, kurioje laikysime savo javascript klases. Struktūra - js/classes/$file_name
+	1.5 Reikalingos klasės: Slate.class.js, Pen.class.js, Program.class.js, ColorPalette.class.js. Šias klases pokolkas paliksime tuščias.
+	1.6 Apsirašysime <body> žymą
+	1.7 Puslapio antraštė
+	1.8	Navigacija (įrankiai, spalvos, pieštuko storumas). Panaudosime HTML duomenų atributą saugoti spalvų ir pieštuko storumo reikšmėms
+	1.9 Apačioje įterpsime pagrindinį main.js javascript programos failą
+2. Pradėsime darba su javascript failais;
+	2.2 Pradėsime darbą su Slate.class.js
+	2.3 Apsirašysime Slate klasės griaučius, t.y kokius duomenis ir metodus turėsime šioje klasėje:
+		Metodų pavadinimai: clear(), getMouseLocation(), onMouseDown(), onMouseLeave(), onMouseMove(), onMouseUp()
+	2.4 Pridėsime įvykius Slate klasėje(events)
+	2.5 Apsirašysime metodą onMouseUp() ir onMouseLeave()
+	2.6 Apsirašysime metodą onMouseDown()
+	2.7 Apsirašysime metodą getMouseLocation() (tricky)
+	2.8 Apsirašysime metodą onMouseMove()
+	2.9 Apsirašysime metodą clear()
+Metodai, kurie pasiekiami canvas objekte (naudosime šią pamoką):
+1. getContext('2d'); //leidžia mum pasiekti canvas objektą
+2. clearRect(x, y, width, height); //x ir y vieta nuo kurios pradėti valymą, o width ir heigh ilgis ir plotis, kurį norimą išvalyti
+4. beginPath(); //pradeda liniją
+5. moveTo(x, y); //nustumia kursorių į x ir y kordinates
+6. lineTo(x, y); //nupiešia nuo kursoriaus iki x ir y kordinačių
+7. closePath(); //uždaro mūsų liniją
+8. stroke(); //nupiešia mūsų liniją
+
+Linijų savybės (path):
+1. strokeStyle = #000000;
+2. lineWidth = 1;
+
+2. Pradėsime darba su javascript failais;
+	2.2 Pradėsime darbą su Slate.class.js
+	2.3 Apsirašysime Slate klasės griaučius, t.y kokius duomenis ir metodus turėsime šioje klasėje:
+		Metodų pavadinimai: clear(), getMouseLocation(), onMouseDown(), onMouseLeave(), onMouseMove(), onMouseUp()
+	2.4 Pridėsime įvykius Slate klasėje(events)
+	2.5 Apsirašysime metodą onMouseUp() ir onMouseLeave()
+	2.6 Apsirašysime metodą onMouseDown()
+	2.7 Apsirašysime metodą getMouseLocation() (tricky)
+	2.8 Apsirašysime metodą onMouseMove()
+	2.9 Apsirašysime metodą clear()
+
+3. Apsirašysime Pen klasę
+	3.1 configure()
+	3.2 setColor()
+	3.3 setColorAsRgb()
+	3.4 setSize()
+
+Gradient metodai: 
+1. createLinearGradient() // sukuria gradient objektą, turi 4 parametrus(pradzios x y ir pabaigos)
+2. addColorStop(0, #000000) // prideda spalvą prie gradient obekto, pirmasis parametras nurodo pradžia spalvos, o antrasis spalva
+3. fillStyle(color|gradient|pattern) // nurodo kaip nuspalvinsime savo stačiakampį (spalva, gradient objektas arba "pattern")
+4. fillRect(x, y, width, height) //nupiešia stačiakampį
+5. getImageData(x, y, width, height) //du panaudojimo būdai, gražinti canvas objekto "pikselių" objektą su (red, green, blue reikšmėmis) arba paimti konkretų pikselį pagal įrašytus parametrus
+
+4. Apsirašysime Program klasę
+	4.1 Apsirašysime start() metodą. Šis metodas uždeta įvykius (eventus) ant elementų.
+	4.2 Apsirašysime onClickPenColor() metodą. Šis metodas paima spalvos kodą iš HTML duomenų atributo ir išsaugo reikšmę Pen klasėje/objekte.
+	4.3 Apsirašysime onClickPenSize() metodą. Šis metodas paima pieštuko storį iš HTML duomenų atributo ir išsaugo reikšmę Pen klasėje/objekte.
+	4.4 Apsirašysime onClickColorPicker() metodą. Šis metodas parodo mūsų spalvų paletę.
+	4.5 Nepilnai apsirašysime onPickColor() metodą. Viduje šio metodo turėsime metodą, kurį paimsime iš ColorPalette - šis metodas gražins mums spalvą. Pasirinkus spalvą paletė yra paslėpiama.
+
+5. Apsirašysime ColorPalette klasę
+	5.1 Apsirašysime klasės griaučius. Klasė turi turėti šias savybes/kintamuosius: 
+		- this.canvas
+		- this.context
+		- this.pickedColor (objektas, kuriame saugosime red, green, blue reikšmes)
+	5.2 Apsirašysime metodą build(). Šis metodas sukuria mūsų paletės spalvas. Panaudosime naujus canvas metodus. Ši metodą išsikviesime ColorPalette klasės konstruktoriuke
+	5.3 Apsirašysime metodą getPickedColor(). Šis metodas gražins reikšmę iš this.pickedColor.
+	5.4 Apsirašysime metodą onClick(). Šis metodas nustato koordinates ir gražina rgba objektą. 
